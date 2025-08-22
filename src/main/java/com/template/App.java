@@ -95,73 +95,116 @@ public class App {
 
     // 10. Convert Celsius to Fahrenheit
     public double celsiusToFahrenheit(double celsius) {
-        // TODO: Implement this method
         return celsius * 1.8 + 32;
     }
 
     // 11. Sum of Elements in a List
     public int sumList(List<Integer> list) {
         // TODO: Implement this method
-        return 0;
+        int totalSum = 0;
+        for (int i = 0; i < list.size(); i++) {
+            totalSum += list.get(i);
+        }
+        return totalSum;
     }
 
     // 12. Find the Largest Element in a List
     public int findMax(List<Integer> list) {
         // TODO: Implement this method
-        return 0;
+        if (list == null || list.isEmpty()){
+            throw new IllegalArgumentException("Null or Empty list.");
+        }
+        int largestPivot = list.get(0);
+        for (int i = 0; i < list.size(); i++) {
+            if (largestPivot < list.get(i)) {
+                largestPivot = list.get(i);
+            }
+        }
+        return largestPivot;
     }
 
     // 13. Filter Even Numbers from a List
     public List<Integer> filterEvenNumbers(List<Integer> list) {
         // TODO: Implement this method
-        return new ArrayList<>();
+        List<Integer> filteredNums = new ArrayList<>();
+        for (int currentNum : list) {
+            if (currentNum % 2 == 0) {
+                filteredNums.add(currentNum);
+            }
+        }
+        return filteredNums;
     }
 
     // 14. Concatenate Two Lists
     public List<String> concatenateLists(List<String> list1, List<String> list2) {
         // TODO: Implement this method
-        return new ArrayList<>();
+        List<String> concatenatedList = new ArrayList<>();
+        for (int i = 0; i < list1.size(); i++) {
+            concatenatedList.add(list1.get(i));
+        }
+        for (int i = 0; i < list1.size(); i++) {
+            concatenatedList.add(list2.get(i));
+        }
+        return concatenatedList;
     }
 
     // 15. Check if List Contains Element
     public boolean listContains(List<String> list, String element) {
         // TODO: Implement this method
-        return false;
+        return list.contains(element);
     }
 
     // 16. Convert Strings to Uppercase
     public List<String> toUpperCase(List<String> list) {
         // TODO: Implement this method
-        return new ArrayList<>();
+        List<String> allCapsList = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++) {
+            String buffer = list.get(i);
+            allCapsList.add(buffer.toUpperCase());
+        }
+        return allCapsList;
     }
 
     // 17. Remove Duplicates from a List
     public List<Integer> removeDuplicates(List<Integer> list) {
         // TODO: Implement this method
-        return new ArrayList<>();
+        List<Integer> noDuplicates = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++) {
+            if (noDuplicates.contains(list.get(i))){}
+            else{
+                noDuplicates.add(list.get(i));
+            }
+        }
+        return noDuplicates;
     }
 
     // 18. Convert List to Set for Unique Elements
     public Set<Integer> listToSet(List<Integer> list) {
         // TODO: Implement this method
-        return new HashSet<>();
+        Set<Integer> mySet = new HashSet<>();
+        for (int i = 0; i < list.size(); i++) {
+            mySet.add(list.get(i));
+        }
+        return mySet;
     }
 
     // 19. Check if Map Contains Key
     public boolean mapContainsKey(Map<String, String> map, String key) {
-        // TODO: Implement this method
-        return false;
+        return map.containsKey(key);
     }
 
     // 20. Check if Map Contains Value
     public boolean mapContainsValue(Map<String, String> map, String value) {
-        // TODO: Implement this method
-        return false;
+        return map.containsValue(value);
     }
 
     // 21. Iterate Over a Map
     public List<String> iterateMap(Map<String, String> map) {
-        // TODO: Implement this method
-        return new ArrayList<>();
+        List<String> mapIterable = new ArrayList<>();
+        for (String key: map.keySet()) {
+            mapIterable.add(key + " -> " + map.get(key));
+        }
+
+        return mapIterable;
     }
 }
